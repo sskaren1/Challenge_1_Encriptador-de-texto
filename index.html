@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="__container">
+      <div class="encryptor">
+        <header class="encryptor__logo">
+          <img src="" alt="" />
+        </header>
+        <div class="encryptor__content">
+          <div class="encryptor__message"></div>
+          <div class="encryptor__content">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <p>Solo letras minúsculas y sin acentos</p>
+          </div>
+          <div class="encryptor__button">
+            <button>Encriptador</button>
+            <button>Desencriptador</button>
+          </div>
+        </div>
+      </div>
+      <div class="decryptor">
+        <div class="decryptor__content">
+          <div class="decryptor__empty">
+            <img src="" alt="" />
+            <p>Ningún mensaje fue encontrado</p>
+            <p>Ingresa el texto que desees encriptar o desencriptar</p>
+          </div>
+          <div class="decryptor__full">
+            <div>
+              <div class="decryptor__message"></div>
+            </div>
+            <div class="decryptor__button">
+              <button>Copiar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
