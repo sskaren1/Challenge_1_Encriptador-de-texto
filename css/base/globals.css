@@ -14,14 +14,25 @@ html{
     padding: 0;
 }
 
+body{
+    background-color: var(--color-1);
+}
+
 [class*="__container"] {
     width: 95%;
     max-width: 1300px;
     margin:0 auto;
-    @media (min-width:$macbook_air){
+}
+
+@media (min-width:1440px){
+    [class*="__container"]{
         max-width: 1900px;
     }
-    @media (min-width:$macbook_pro_13){
+}
+
+@media (min-width:2560px){
+    [class*="__container"]{
+
         max-width: 2800px;
     }
 }
@@ -39,4 +50,9 @@ button{
     border: none;
     background-color: transparent;
     color: var(--neutral-2);
+}
+
+textarea {
+    resize: none;
+    /* border: none; */
 }
