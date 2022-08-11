@@ -52,7 +52,3 @@ button{
     color: var(--neutral-2);
 }
 
-textarea {
-    resize: none;
-    /* border: none; */
-}
