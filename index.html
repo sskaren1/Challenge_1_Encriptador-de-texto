@@ -13,14 +13,13 @@
         <header class="encryptor__logo">
           <img src="./assets/img/Logo.png" alt="logo" />
         </header>
-        <div class="encryptor__content">
+        <div class="encryptor__content" id="contentEncryptor">
           <div class="encryptor__message">
             <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="10"
+              name="inputMessage"
+              id="inputMessage"
               placeholder="Ingrese el texto aquí"
+              autofocus
             ></textarea>
           </div>
           <div class="encryptor__warning">
@@ -46,22 +45,24 @@
       </div>
       <div class="decryptor">
         <div class="decryptor__content">
-          <div class="decryptor__empty">
+          <!-- <div class="decryptor__empty">
             <img src="./assets/img/Muñeco.png" alt="muñeco" />
             <h2>Ningún mensaje fue encontrado</h2>
             <p>Ingresa el texto que desees encriptar o desencriptar</p>
-          </div>
-          <!-- <div class="decryptor__full">
+          </div> -->
+          <div class="decryptor__full">
             <div class="decryptor__message">
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.    
-              </p>
+              <textarea
+                name="outputMessage"
+                id="outputMessage"
+                autofocus
+              ></textarea>
             </div>
 
             <div class="decryptor__button">
               <button class="btn btn--copy">Copiar</button>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>

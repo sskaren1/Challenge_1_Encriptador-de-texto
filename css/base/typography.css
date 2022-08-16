@@ -41,8 +41,11 @@ button {
   font-size: 1.6rem;
 }
 
-.encryptor__content .encryptor__message textarea {
+.encryptor__message textarea {
   font-size: 3.2rem;
+}
+.decryptor__message textarea {
+  font-size: 2.4rem;
 }
 .encryptor__warning p {
   font-size: 1.2rem;
@@ -55,45 +58,3 @@ button {
   font-size: 2.4rem;
 }
 
-/* ul {
-    list-style: none;
-}
-
-li {
-    font-family: var(--link-font);
-    font-weight: var(--regular); 
-    color: var(--neutral-2); 
-    text-align: justify;
-    transition-property: color;
-    transition-duration: .5s;
-
-    font-size: 1.9rem;
-}
-
-
-a {
-    font-family: var(--link-font);
-    font-weight: var(--regular); 
-    color: var(--neutral-2);    
-    text-align: center;
-    text-decoration: none;
-    transition-property: color;
-    transition-duration: .5s;
-    cursor: pointer;  
-    font-size: 1.6rem;
-}
-a:hover {
-    color: var(--color-3);
-} 
-
-i {
-    font-family: var(--link-font);
-    font-weight: var(--regular); 
-    color: var(--neutral-2);    
-    text-align: center;
-    text-decoration: none;
-    transition-property: color;
-    transition-duration: .5s;
-    cursor: pointer;  
-    font-size: 1.6rem;
-} */

@@ -20,6 +20,7 @@
 /* Encryptor */
 .encryptor {
   height: 100%;
+  width: 100%;
 }
 /* logo */
 .encryptor .encryptor__logo img {
@@ -47,15 +48,21 @@
   }
 }
 /* textarea */
-.encryptor__content .encryptor__message textarea {
+.encryptor__message textarea, .decryptor__message textarea {
   width: 100%;
+  min-height: 30vh;
   background-color: transparent;
   border: none;
   padding: 1rem;
   border-radius: 1.5rem;
   resize: none;
 }
-.encryptor__content .encryptor__message textarea::placeholder {
+@media (min-width: 1000px) {
+  .encryptor__message textarea, .decryptor__message textarea {
+    min-height: 68vh;
+  }
+}
+.encryptor__message textarea::placeholder, .decryptor__message textarea::placeholder {
   color: var(--color-2);
 }
 /* warning */
@@ -113,7 +120,7 @@
   height: 100%;
   background-color: var(--neutral-2);
   border-radius: 1.5rem;
-  padding: 2rem;
+  padding: 4rem 2rem 2rem;
 }
 /* decryptor empty */
 @media (min-width: 1000px) {
@@ -149,10 +156,33 @@
     height: 80vh;
   }
 }
-.decryptor__full p {
+.decryptor__full .decryptor__message p {
   color: var(--color-4);
   margin-bottom: 2rem;
 }
+@media (min-width: 1000px){
+  .decryptor__full .decryptor__message p{
+    margin-bottom: 0;
+  }
+}
 .btn--copy {
   color: var(--color-2);
+}
+
+.alert {
+  width: 100%;
+  display: block;
+  font-weight: 700;
+  color: var(--color-1);
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+.alert--danger {
+  background-color: var(--color-6);
+}
+
+.alert--success {
+  background-color: var(--color-7);
 }

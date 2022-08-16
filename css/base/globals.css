@@ -52,3 +52,8 @@ button{
     color: var(--neutral-2);
 }
 
+textarea, textarea:focus, textarea:active {
+    outline: transparent;
+    border: 1px solid transparent;
+ }
+
