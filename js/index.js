@@ -9,6 +9,8 @@ eventListeners();
 function eventListeners() {
   inputMessageField.addEventListener("change", messageToEncrypt);
   btnEncryptor.addEventListener("click", encryptor);
+  btnDecryptor.addEventListener("click", decryptor);
+  btnCopy.addEventListener("click", copyOutput);
 }
 
 const objectMessage = {
@@ -30,7 +32,10 @@ function messageToEncrypt(e) {
 }
 
 function encryptor() {
-  let { inputMessage, outputMessage } = objectMessage;
+  //   Reiniciar el objeto
+  restartObject();
+
+  const { inputMessage, outputMessage } = objectMessage;
   const names = Object.keys(encryptionKeys);
   const keys = Object.values(encryptionKeys);
 
@@ -39,8 +44,6 @@ function encryptor() {
   } else if (inputMessage === "A") {
     printAlert("Debe introducir solo letras en minuscula", "error");
   } else {
-    printAlert("Mensaje Encriptado", "success");
-
     // Proceso de encriptación
     for (let i = 0; i < inputMessage.length; i++) {
       if (inputMessage[i] === names[0]) {
@@ -63,14 +66,22 @@ function encryptor() {
         objectMessage.outputMessage += inputMessage[i];
       }
     }
-    console.log("outputMessage final", outputMessage);
-    console.log("objectMessage final", objectMessage);
+    // console.log("outputMessage final", outputMessage);
+    // console.log("objectMessage final", objectMessage);
+
+    // imprimir el mensaje encriptado
+    outputMessageField.innerHTML = objectMessage.outputMessage;
+    printAlert("Mensaje Encriptado", "success");
+
+    // Limpiar el html del input
+    cleanHTML();
   }
-  //   imprimir el mensaje encriptado
-  outputMessageField.innerHTML = objectMessage.outputMessage;
-  
-  //   Reiniciar el objeto
-  restartObject();
+}
+
+function decryptor() {
+  let { outputMessage } = objectMessage;
+  console.log("outputMessage decry", outputMessage);
+  console.log("objectMessage", objectMessage);
 }
 
 function isMayusc(message) {
@@ -100,7 +111,7 @@ function printAlert(mensaje, tipo) {
   // Quitar el alert despues de 3 segundos
   setTimeout(() => {
     divMensaje.remove();
-  }, 3000);
+  }, 1500);
 }
 
 function restartObject() {
@@ -109,7 +120,14 @@ function restartObject() {
 }
 
 function cleanHTML() {
-  while (outputMessageField.firstChild) {
-    outputMessageField.removeChild(outputMessageField.firstChild);
-  }
+  inputMessageField.value = '';
+}
+
+function copyOutput() {
+  navigator.clipboard.writeText(outputMessageField.innerHTML);
+  printAlert("Mensaje copiado", "success");
+
+  // Otra manera de copiar el campo
+  // outputMessageField.select();
+  // document.execCommand("copy");
 }
