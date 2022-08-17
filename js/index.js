@@ -28,7 +28,7 @@ const encryptionKeys = {
 
 function messageToEncrypt(e) {
   objectMessage[e.target.name] = e.target.value;
-  console.log("objectMessage", objectMessage);
+  // console.log("objectMessage", objectMessage);
 }
 
 function encryptor() {
@@ -79,9 +79,38 @@ function encryptor() {
 }
 
 function decryptor() {
-  let { outputMessage } = objectMessage;
-  console.log("outputMessage decry", outputMessage);
-  console.log("objectMessage", objectMessage);
+  //   Reiniciar el objeto
+  restartObject();
+
+  let { inputMessage } = objectMessage;
+
+  const names = Object.keys(encryptionKeys);
+  const keys = Object.values(encryptionKeys);
+
+  if (inputMessage === "") {
+    printAlert("Debe introducir un mensaje", "error");
+  } else if (inputMessage === "A") {
+    printAlert("Debe introducir solo letras en minuscula", "error");
+  } else {
+    // Proceso de decriptación
+    for (let i = 0; i < inputMessage.length; i++) {
+      if (inputMessage.includes(keys[i])) {
+        // Reemplaza la letra por el código
+        inputMessage = inputMessage.replaceAll(
+          keys[i],
+          names[i]
+        );
+      }
+    }
+    objectMessage.outputMessage = inputMessage;
+
+    // imprimir el mensaje encriptado
+    outputMessageField.innerHTML = objectMessage.outputMessage;
+    printAlert("Mensaje Encriptado", "success");
+
+    // Limpiar el html del input
+    cleanHTML();
+  }
 }
 
 function isMayusc(message) {
@@ -120,7 +149,7 @@ function restartObject() {
 }
 
 function cleanHTML() {
-  inputMessageField.value = '';
+  inputMessageField.value = "";
 }
 
 function copyOutput() {
