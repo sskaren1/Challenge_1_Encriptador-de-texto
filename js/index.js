@@ -3,6 +3,8 @@ const outputMessageField = document.querySelector("#outputMessage");
 const btnEncryptor = document.querySelector(".btn--encryptor");
 const btnDecryptor = document.querySelector(".btn--decryptor");
 const btnCopy = document.querySelector(".btn--copy");
+const decryptorEmpty= document.querySelector(".decryptor__empty");
+const decryptorFull= document.querySelector(".decryptor__full");
 
 eventListeners();
 
@@ -11,6 +13,7 @@ function eventListeners() {
   btnEncryptor.addEventListener("click", encryptor);
   btnDecryptor.addEventListener("click", decryptor);
   btnCopy.addEventListener("click", copyOutput);
+  window.addEventListener("load", empty);
 }
 
 const objectMessage = {
@@ -66,12 +69,15 @@ function encryptor() {
         objectMessage.outputMessage += inputMessage[i];
       }
     }
-    // console.log("outputMessage final", outputMessage);
-    // console.log("objectMessage final", objectMessage);
+    console.log("outputMessage final", outputMessage);
+    console.log("objectMessage final", objectMessage);
 
     // imprimir el mensaje encriptado
     outputMessageField.innerHTML = objectMessage.outputMessage;
     printAlert("Mensaje Encriptado", "success");
+    decryptorFull.classList.remove("empty");
+    decryptorEmpty.classList.add("full");
+    decryptorFull.classList.add("full");
 
     // Limpiar el html del input
     cleanHTML();
@@ -159,4 +165,16 @@ function copyOutput() {
   // Otra manera de copiar el campo
   // outputMessageField.select();
   // document.execCommand("copy");
+}
+
+function empty() {
+  let { outputMessage } = objectMessage;
+
+  if(outputMessage === '') {
+    decryptorFull.classList.add("empty");
+  } else{
+    decryptorFull.classList.remove("empty");
+    decryptorEmpty.classList.add("full");
+    decryptorFull.classList.add("full");
+  }
 }
