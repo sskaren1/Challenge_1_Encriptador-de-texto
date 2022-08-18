@@ -2,7 +2,7 @@
 
 body {
   font-family: var(--secondary-font);
-  font-weight: var(--regular);
+  font-weight: var(--medium);
 }
 
 h1,
@@ -33,12 +33,26 @@ h4 {
 p,
 span {
   font-family: var(--secondary-font);
-  font-weight: var(--regular);
+  font-weight: var(--medium);
   line-height: 2.5rem;
   font-size: 1.6rem;
 }
+
+a {
+  font-family: var(--secondary-font);
+  font-weight: var(--medium);
+  text-decoration: none;
+  line-height: 2.5rem;
+  font-size: 2.2rem;
+}
+
 button {
   font-size: 1.6rem;
+  font-weight: var(--bold);
+}
+
+textarea {
+  font-family: var(--secondary-font);
 }
 
 .encryptor__message textarea {
