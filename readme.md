@@ -7,11 +7,11 @@ El proyecto consistió en construir una página web que encripta y desencripta e
 ## Llaves de encriptacion
 Las "llaves" de encriptación que utilizaremos son las siguientes:
 
-`La letra "e" es convertida para "enter"`
-`La letra "i" es convertida para "imes"`
-`La letra "a" es convertida para "ai"`
-`La letra "o" es convertida para "ober"`
-`La letra "u" es convertida para "ufat"`
+- La letra "**a**" es convertida a "**ai**".
+- La letra "**e**" es convertida a "**enter**".
+- La letra "**i**" es convertida a "**imes**".
+- La letra "**o**" es convertida a "**ober**"
+- La letra "**u**" es convertida a "**ufat**"
 
 ## ✔️ Requisitos
 - Debe funcionar solo con letras minúsculas
